@@ -2,10 +2,10 @@ import Education from "../components/Education";
 import WorkExperience from "../components/WorkExperience";
 import Volunteer from "../components/Volunteer";
 import Project from "../components/Project";
-
 import { Card, Form, Icon, Button, Input } from "semantic-ui-react";
 import { useForm } from "react-hook-form";
 import parseResumeFormData from "../services/parseResumeFormData";
+import postFormDataToServer from "../services/postFormDataToServer";
 
 function ResumeForm({
   resumeFormWorkExperience,
@@ -21,7 +21,7 @@ function ResumeForm({
   // Make a parser for this form's unstrcutred data
   const submitForm = (data) => {
     console.log(data);
-    console.log(parseResumeFormData(data));
+    postFormDataToServer(parseResumeFormData(data));
   };
 
   return (
