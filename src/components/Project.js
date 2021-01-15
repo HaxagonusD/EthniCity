@@ -1,25 +1,37 @@
 import { Form, List } from "semantic-ui-react";
-function Project() {
+function Project({ index, register }) {
   return (
     <>
       <Form.Field>
         <label>Project Name</label>
-        <input placeholder="Project Name"></input>
-      </Form.Field>
-      <Form.Field>
-        <label>Description</label>
-        <input placeholder="Description"></input>
+        <input
+          name={`${index}nameproject`}
+          ref={register}
+          placeholder="Project Name"
+        ></input>
       </Form.Field>
       <List bulleted>
         <label>Highlights</label>
         <List.Item>
-          <input placeholder="Highlight"></input>
+          <input
+            name={`${index}ahighlightproject`}
+            ref={register}
+            placeholder="Highlight"
+          ></input>
         </List.Item>
         <List.Item>
-          <input placeholder="Highlight"></input>
+          <input
+            name={`${index}bhighlightproject`}
+            ref={register}
+            placeholder="Highlight"
+          ></input>
         </List.Item>
         <List.Item>
-          <input placeholder="Highlight"></input>
+          <input
+            name={`${index}chighlightproject`}
+            ref={register}
+            placeholder="Highlight"
+          ></input>
         </List.Item>
       </List>
     </>
