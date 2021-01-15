@@ -43,6 +43,18 @@ Challenge problems - [Google Docs](https://docs.google.com/presentation/d/1ou1Fo
 GPT-3 Sandbox: Turn your ideas into demos in a matter of minutes
 [github repo](https://github.com/shreyashankar/gpt3-sandbox)
 
+## Technologies
+
+= React
+    - Semantic UI React
+    
+## Execute React
+
+```
+npm install
+npm start
+```
+
 ## Branches
 
 - Judi : social_impact

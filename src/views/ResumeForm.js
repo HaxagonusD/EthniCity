@@ -1,7 +1,7 @@
 import WorkExperience from "../components/WorkExperience";
 import Volunteer from "../components/Volunteer";
 import Project from "../components/Project";
-import { Form, Icon, Button, Input } from "semantic-ui-react";
+import { Form, Button, Input } from "semantic-ui-react";
 
 function ResumeForm() {
   return (
