@@ -2,6 +2,7 @@ import Education from "../components/Education";
 import WorkExperience from "../components/WorkExperience";
 import Volunteer from "../components/Volunteer";
 import Project from "../components/Project";
+
 import { Card, Form, Icon, Button, Input } from "semantic-ui-react";
 import { useForm } from "react-hook-form";
 import parseResumeFormData from "../services/parseResumeFormData";
