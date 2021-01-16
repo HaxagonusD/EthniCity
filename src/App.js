@@ -23,7 +23,10 @@ function App() {
 
   return (
     <Router>
-      <Container>
+
+
+      <Container fluid>
+
         <NavigationBar />
         <Switch>
           <Route exact path="/">
