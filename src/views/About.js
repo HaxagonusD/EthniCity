@@ -36,7 +36,7 @@ Minority Talent sourcing tool to help with unemployment— Instead of you having
       </List.Content>
                         </List.Item>
                         <List.Item>
-                            <Image avatar src='https://react.semantic-ui.com/images/avatar/large/jenny.jpg' />
+                            <Image avatar src='https://react.semantic-ui.com/images/avatar/large/stevie.jpg' />
                             <List.Content>
                                 <List.Header>Judi Desire</List.Header>
         Data Science Fellow
