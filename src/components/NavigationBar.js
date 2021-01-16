@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import React, { Component } from 'react'
 import { Input, Menu, Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-=======
-import React, { Component } from "react";
-import { Input, Menu } from "semantic-ui-react";
-import { Link } from "react-router-dom";
->>>>>>> 6e75269b832d2d0edd5ef25675b4de19b6a6f3cd
 
 export default class NavMenuHeader extends Component {
   state = { activeItem: "home" };
