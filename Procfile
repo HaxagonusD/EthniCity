@@ -1,3 +1,3 @@
 web: gunicorn app:app
-node: npm build
+worker: npm build
 
