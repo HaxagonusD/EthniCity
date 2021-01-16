@@ -11,7 +11,7 @@ export default class NavMenuHeader extends Component {
         const { activeItem } = this.state
 
         return (
-            <Menu secondary>
+            <Menu stackable>
                 <Menu.Item
                     name='home'
                     active={activeItem === 'home'}
@@ -28,9 +28,9 @@ export default class NavMenuHeader extends Component {
                     onClick={this.handleItemClick}
                 />
                 <Menu.Menu position='right'>
-                    <Menu.Item>
+                    {/* <Menu.Item>
                         <Input icon='search' placeholder='Search...' />
-                    </Menu.Item>
+                    </Menu.Item> */}
                     <Menu.Item
                         as={Link}
                         to="login"
