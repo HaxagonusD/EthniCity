@@ -1,17 +1,17 @@
 function Login() {
     return (<div>
-        <form class="ui form">
+        <form className="ui form">
             
-                <div class="field">
+                <div className="field">
                     <label>Username</label>
                     <input type="text" placeholder="Username"/>
     </div>
-                    <div class="field">
+                    <div className="field">
                         <label>Password</label>
                         <input type="password"/>
     </div>
                     
-                    <button class="ui button" type="submit">Login</button>
+                    <button className="ui button" type="submit">Login</button>
                         </form>
             </div>)
   }
