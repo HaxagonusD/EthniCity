@@ -17,6 +17,7 @@ def test():
     print(type(json_file))
     new_string = str(request.data, 'utf-8')
     print(type(new_string))
+    print(new_string)
 
     # new_string = json. dumps(request.data)
     #we will make the json into a string
@@ -37,4 +38,4 @@ def sendingreqtdata():
 
 
 if __name__ == '__main__':
-    app.run(port=8000)
+    app.run(port=5000)
