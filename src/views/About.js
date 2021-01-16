@@ -74,7 +74,7 @@ GitHub?</List.Header>
                 <List.Item>
                     <List.Header>Please provide a link to your demo, if you have one:
 Canva?</List.Header>
-                    <a href="https://www.canva.com/design/DAETRULz1v0/ubS3eFO2UycsTz2u3_DzYg/edit" target="_blank">https://www.canva.com/design/DAETRULz1v0/ubS3eFO2UycsTz2u3_DzYg/edit</a>
+                    <a href="https://www.canva.com/design/DAETWGEKjaY/FPhr64xArHglQYnbKf_VSw/edit#" target="_blank">https://www.canva.com/design/DAETWGEKjaY/FPhr64xArHglQYnbKf_VSw/edit#</a>
 
                 </List.Item>
             </List>

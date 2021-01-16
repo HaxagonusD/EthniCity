@@ -49,14 +49,8 @@ Challenge problems - [Google Docs](https://docs.google.com/presentation/d/1ou1Fo
 ### Design Tools
 
 - Figma
-- Canva
+- [Canva](https://www.canva.com/design/DAETWGEKjaY/FPhr64xArHglQYnbKf_VSw/edit#)
 
-### Execute React
-
-```
-npm install
-npm start
-```
 
 ### OpenAI GPT-3
 
@@ -78,6 +72,13 @@ GPT-3 Sandbox: Turn your ideas into demos in a matter of minutes
     - @clarizamayo / ValTech-Social-Impact
     - @RakMirza / ValTech-Social-Impact
     - @jperalta7 / ValTech-Social-Impact
+
+### Execute React
+
+```
+npm install
+npm start
+```
 
 ### LocalHost
 
