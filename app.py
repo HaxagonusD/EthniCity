@@ -1,8 +1,9 @@
 from flask import Flask, request
-import db
+from prompt import returning_main
 import requests
 import json
-#import openai
+import openai
+import asyncio
 
 app = Flask(__name__)
 
@@ -13,28 +14,20 @@ def flask_mongodb_atlas():
 @app.route("/test", methods=['POST'])
 def test():
     json_file = request.data
-    print(json_file)
-    print(type(json_file))
     new_string = str(request.data, 'utf-8')
-    print(type(new_string))
     print(new_string)
-
-    # new_string = json. dumps(request.data)
-    #we will make the json into a string
-    #sending the string to openai- import openai library
-    #open ai will transform it - summarization ---> sent back a string (paragraph)
-    #go back into request.data- add a key to it: summary: with the value as the paragraph
-    #sending the final json with the summary to the database in MongoDB
-    # db.db.collection.insert_one({"name": "John"})
-    # print(new_string)
+    summary = returning_main(new_string)
+    print(summary)
+    print((summary), "hello")
     return "Connected to the data base!"
 
 @app.route("/sendinginfo", methods=['GET'])
 def sendingreqtdata():
-    #get info from MongoDB
-    #return it to the frontend
-    #display it to employers
-    return "Sending info to FrontEnd!"
+    star = mongo.db.stars
+    output = []
+    for s in star.find():
+        output.append({'resume' : s['resume'], 'summary' : s['summary']})
+    return jsonify({'result' : output})
 
 
 if __name__ == '__main__':
