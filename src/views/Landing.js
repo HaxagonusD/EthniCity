@@ -29,17 +29,17 @@ function Landing() {
         <div>
           <div className="col-icon"><i aria-hidden="true" className="hand point down outline huge icon"></i></div>
           <h3>Register</h3>
-          <p className="description">Gravida quis blandit turpis cursus in hac habitasse platea. Ut diam quam nulla porttitor.</p>
+          <p className="description">A space for employers to find diverse individuals</p>
         </div>
         <div>
           <div className="col-icon"><i aria-hidden="true" className="save outline huge icon"></i></div>
           <h3>save &amp; apply</h3>
-          <p className="description">Gravida quis blandit turpis cursus in hac habitasse platea. Ut diam quam nulla porttitor.</p>
+          <p className="description">Individuals to build their Personal Brand</p>
         </div>
         <div>
           <div className="col-icon"><i aria-hidden="true" className="search huge icon"></i></div>
           <h3>Employers Find You</h3>
-          <p className="description">Gravida quis blandit turpis cursus in hac habitasse platea. Ut diam quam nulla porttitor.</p>
+          <p className="description">Employers will be able to find you!</p>
         </div>
       </div>
     </div>
@@ -49,13 +49,13 @@ function Landing() {
       <h2>Our Success <span>Stories</span></h2>
       <div className="candidates col-grid pt-5">
         <div className="candidates-col">
-          <div className="ui card"><div className="image"><img src={person_1} /></div><div className="content"><div className="header">Elliot Baker</div><div className="meta">Software Engineer</div><div className="description">Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.</div></div></div>
+          <div className="ui card"><div className="image"><img src={person_1} /></div><div className="content"><div className="header">Tim Scott</div><div className="meta">Political Science</div><div className="description">Tim is a Political Science with a Bachelor of Arts.</div></div></div>
         </div>
         <div className="candidates-col">
-          <div className="ui card"><div className="image"><img src={person_2} /></div><div className="content"><div className="header">Daniel Xavier</div><div className="meta">Data Scientist</div><div className="description">Daniel is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.</div></div></div>
+          <div className="ui card"><div className="image"><img src={person_2} /></div><div className="content"><div className="header">Carla R Calderon</div><div className="meta">Web Researcher</div><div className="description">Carla is a freelance Web Research with 5 years experience.</div></div></div>
         </div>
         <div className="candidates-col">
-          <div className="ui card"><div className="image"><img src={person_3} /></div><div className="content"><div className="header">Mike Perez</div><div className="meta">Project Manager</div><div className="description">Mike is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.</div></div></div>
+          <div className="ui card"><div className="image"><img src={person_3} /></div><div className="content"><div className="header">Mike Xiu</div><div className="meta">Data Science Fellow</div><div className="description">Mike is a Data Science Fellow with a Bachelor of Science.</div></div></div>
         </div>
       </div>
     </div>

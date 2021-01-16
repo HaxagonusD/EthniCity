@@ -11,24 +11,28 @@ export default class NavMenuHeader extends Component {
     const { activeItem } = this.state;
 
     return (
-              <Menu stackable>
-                <Menu.Item
-                    name='home'
-                    active={activeItem === 'home'}
-                    onClick={this.handleItemClick}
-                />
-                <Menu.Item
-                    name='about'
-                    active={activeItem === 'about'}
-                    onClick={this.handleItemClick}
-                />
-                {/* <Menu.Item
+      <Menu stackable>
+        <Menu.Item
+          as={Link}
+          to="/"
+          name='home'
+          active={activeItem === 'home'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          as={Link}
+          to="about"
+          name='about'
+          active={activeItem === 'about'}
+          onClick={this.handleItemClick}
+        />
+        {/* <Menu.Item
                     name='partners'
                     active={activeItem === 'partners'}
                     onClick={this.handleItemClick}
                 /> */}
-                <Menu.Menu position='right'>
-                    {/* <Menu.Item>
+        <Menu.Menu position='right'>
+          {/* <Menu.Item>
                         <Input icon='search' placeholder='Search...' />
                     </Menu.Item>
                     <Menu.Item
@@ -45,17 +49,17 @@ export default class NavMenuHeader extends Component {
                         active={activeItem === 'signup'}
                         onClick={this.handleItemClick}
                     /> */}
-                    <Menu.Item
-                        as={Link}
-                        to="login-register"
-                        name='login-register'
-                        active={activeItem === 'login-register'}
-                        onClick={this.handleItemClick}
-                    >
-                    <Icon name='user outline' />
-                    </Menu.Item>
-                </Menu.Menu>
-            </Menu>
-        )
-    }
+          <Menu.Item
+            as={Link}
+            to="login-register"
+            name='login-register'
+            active={activeItem === 'login-register'}
+            onClick={this.handleItemClick}
+          >
+            <Icon name='user outline' />
+          </Menu.Item>
+        </Menu.Menu>
+      </Menu>
+    )
+  }
 }

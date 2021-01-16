@@ -8,6 +8,7 @@ import Profile from "./views/Profile";
 import Registration from "./views/Registration";
 import ResumeForm from "./views/ResumeForm";
 import SearchEngine from "./views/SearchEngine";
+import About from "./views/About";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import LoginRegister from "./views/LoginRegister";
@@ -53,6 +54,9 @@ function App() {
           </Route>
           <Route path="/search">
             <SearchEngine users={users} setUsers={setUsers} />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/login">
             <Login />
