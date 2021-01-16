@@ -1,17 +1,23 @@
+<<<<<<< HEAD
 import React, { Component } from 'react'
 import { Input, Menu, Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+=======
+import React, { Component } from "react";
+import { Input, Menu } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+>>>>>>> 6e75269b832d2d0edd5ef25675b4de19b6a6f3cd
 
 export default class NavMenuHeader extends Component {
-    state = { activeItem: 'home' }
+  state = { activeItem: "home" };
 
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
-    render() {
-        const { activeItem } = this.state
+  render() {
+    const { activeItem } = this.state;
 
-        return (
-            <Menu stackable>
+    return (
+              <Menu stackable>
                 <Menu.Item
                     name='home'
                     active={activeItem === 'home'}
