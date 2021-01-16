@@ -11,6 +11,7 @@ import SearchEngine from "./views/SearchEngine";
 
 import Login from "./views/Login";
 import Signup from "./views/Signup";
+import LoginRegister from "./views/LoginRegister";
 
 import { useState } from "react";
 
@@ -80,6 +81,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup />
+          </Route>
+          <Route path="/login-register">
+            <LoginRegister />
           </Route>
         </Switch>
         <Footer />
