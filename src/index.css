@@ -46,8 +46,8 @@ code {
     monospace;
 }
 
-.pt-5 {padding-top: 5%;}
-.p-5 {padding: 5%;}
+.pt-5 {padding-top: 5% !important;}
+.p-5 {padding: 5% !important;}
 .bg-grey {
   background-color: #EDF1F4;
 }

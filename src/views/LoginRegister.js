@@ -12,16 +12,31 @@ function LoginRegister() {
             <div className="signin">
                 <h3>Sign In</h3>
 
-                <form className="ui form">
+                <form className="ui form" action="/resume">
                     <div className="field">
                         <label>Username</label>
                         <input type="text" placeholder="Username" />
                     </div>
                     <div className="field">
                         <label>Password</label>
-                        <input type="password" />
+                        <input type="password" placeholder="Password" />
                     </div>
-                    <button className="ui basic button" type="submit">Sign In</button>
+
+                    <div class="ui grid">
+                        <div class="row">
+                            <div class="eight wide column">
+                                <div className="inline field">
+                                    <div className="ui checkbox">
+                                        <input type="checkbox" className="hidden" readonly="readonly" tabindex=
+                                            "0" /><label>Keep me signed in</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="eight wide column">Lost Your Username/Password?</div>
+                        </div>
+                    </div>
+
+                    <div className="pt-5"><button className="ui orange button" type="submit">Sign In</button></div>
                 </form>
             </div>
             <div className="register">
@@ -37,7 +52,7 @@ function LoginRegister() {
                         </div>
                     </div> */}
 
-                    <form className="ui form attached fluid">
+                    <form className="ui form attached fluid" action="/resume">
                         <div className="equal width fields">
                             <div className="field">
                                 <label>First Name</label>
@@ -76,7 +91,7 @@ function LoginRegister() {
                             <label>Password</label>
 
                             <div className="ui input">
-                                <input type="password" />
+                                <input type="password" placeholder="Password" />
                             </div>
                         </div>
 
@@ -84,8 +99,14 @@ function LoginRegister() {
                             <label>Confirm Password</label>
 
                             <div className="ui input">
-                                <input type="password" />
+                                <input type="password" placeholder="Confirm Password" />
                             </div>
+                        </div>
+
+                        <div className="field">
+                            <label>Account Type</label>
+                            <select>
+                                <option value="candidate">Candidate</option><option value="employer">Employer</option></select>
                         </div>
 
                         <div className="inline field">
@@ -93,7 +114,9 @@ function LoginRegister() {
                                 <input type="checkbox" className="hidden" readonly="readonly" tabindex=
                                     "0" /><label>You accept our Terms and Conditions and Privacy Policy</label>
                             </div>
-                        </div><button className="ui blue button">Register New</button>
+                        </div>
+
+                        <button className="ui blue button">Register Now</button>
                     </form>
 
                     {/* <div className="ui warning bottom attached message">
