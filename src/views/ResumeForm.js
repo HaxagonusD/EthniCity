@@ -27,18 +27,15 @@ function ResumeForm({
 
   return (
     <div>
+      <Container fluid className="secondary-banner">
+            <div className="ui large breadcrumb"><a className="section">Dashboard</a><i aria-hidden="true" className="right angle icon divider"></i><a className="section"></a>Candidate<i aria-hidden="true" className="right angle icon divider"></i><a className="section">Resume</a></div>
+            <h1>Resume Form</h1>
+        </Container>
       <Container fluid className="pt-5">
         <Grid divided='vertically'>
           <Grid.Row columns={2}>
             <Grid.Column width={4}>
-              <Header as='h3'>
-                <Icon name='settings' />
-                <Header.Content>
-                  Dashboard
-      <Header.Subheader>Manage your profile</Header.Subheader>
-                </Header.Content>
-              </Header>
-              <div class="ui inverted pointing vertical menu"><a class="active item">Resume</a><a class="item">Profile</a></div>
+              <div class="ui fluid inverted pointing vertical menu"><a class="active item">Resume</a><a class="item">Profile</a></div>
             </Grid.Column>
             <Grid.Column width={12} className="p-5 bg-grey">
 
