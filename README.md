@@ -79,7 +79,7 @@ GPT-3 Sandbox: Turn your ideas into demos in a matter of minutes
     - @RakMirza / ValTech-Social-Impact
     - @jperalta7 / ValTech-Social-Impact
 
-### LocatHost
+### LocalHost
 
 - http://localhost:3000/
 ![](src/views/img/EthniCity-Landing.png)
