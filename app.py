@@ -38,6 +38,5 @@ def sendingreqtdata():
 
     return jsonify({'result' : output})
 
-
 if __name__ == '__main__':
     app.run(port=5000)
