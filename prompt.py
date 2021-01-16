@@ -1,8 +1,11 @@
 from chronological import main, read_prompt, gather, fetch_max_search_doc,cleaned_completion
+import db
 
+def resume_manager(new_string):
+    async def logic():
+        block = await cleaned_completion(f"I'm trying to summarize resumes\n###\nHere is an example of a resume\n###\n{new_string}\n###\nSummarize this resume to one sentence", engine="davinci-instruct-beta", temperature=0.44, top_p=1)
+        db.db.collection.insert_one({"resume":new_string,"summary":block})
+    return logic
 
-async def logic():
-    block = await cleaned_completion("I'm trying to summarize resumes\n###\nHere is an example of a resume\n###\nJulian Q\nExpert\nJavascript TypeScript\nReact.js Express.js\nHTML CSS MongoDB\nREST APIs Git Firebase\nGeneral Purpose\nProgramming\nProficient\nJava Python C / C++\nRuby\nLanguages\nEnglish (Native speaker)\nSpanish (Native Speaker)\nInterests\nBlockchain tech\nBitcoin\nFinance\nBusiness\nInvesting\nGaming\nTwitch\nVideo Games\nSummary\nPassionate Full Stack Developer familiar with a wide range of tools and languages.\nKnowledgeable of backend and frontend development requirements. Able to handle any part of\nthe process with ease. Collaborative team player with excellent technical abilities. Loves Vim.\nCurrently working on some exciting projects.\nExperience\nKnowledge House Tutor\nTutored students in Knowledge house curriculum increasing chances for student success\nTaught classroom of 16 students while debugging issues\nOpen Source Projects\nCurrenlty working on a data analysis application that allows churches and members to\ntrack financial data to gain insights and for tax purposes\nFirebase Express.js React.js React Native\nUsing the Paypal API with webhooks to receive transaction data into Firebase Cloud\nFirestore\nhosting react.js and react native front end that interacts with firebase Cloud functions\nto view data\nworking in a team of two using agile methodologies to get this project finished in a\ntimely manner\nA social media application based around music tracks and playlists\nExpress.js React.js Javascript MongoDB\nUtilized Twilio API and Spotify API functionalities to bring a more engaging experience\nfor music lovers.\nCreated Express application that serves a single page application front end with React\nRouter for client side routing\nImplemented Node.js worker to run a service that updates our database with Spotify\ninformation on a seperate thread\nEducation\nBootcamp Web Development\nBachelor Computer Science\nJavascript\nWeb Development frameworks\nCareer Classes\nData Structures and Algorithms\nComputer Architecture 100 and 200\nIntroduction to Object Oriented\nProgramming\nFormal Languages and Automata  \n###\nSummarize this resume to one sentence", engine="davinci-instruct-beta", temperature=0.44, top_p=1)
-    print(block)
-
-main(logic)
+def returning_main(new_string):
+    main(resume_manager(new_string))
