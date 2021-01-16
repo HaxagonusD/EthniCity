@@ -1,9 +1,10 @@
 import { Container, List, Image } from "semantic-ui-react";
 
+
 function About() {
     return (<div>
         <Container fluid className="about secondary-banner">
-            <div className="ui breadcrumb"><a className="section">Home</a><i aria-hidden="true" className="right angle icon divider"></i><a className="section">About</a></div>
+            <div className="ui large breadcrumb"><a className="section">Home</a><i aria-hidden="true" className="right angle icon divider"></i><a className="section">About</a></div>
             <h1>Mission Statement</h1>
             <p>Ethnicity's mission is to facilitate job searches for minority ethnic group candidates. As a diverse team, we understand what candidates.  </p>
             <p>By submitting your resume ONCE, employers will be able to find you.</p>

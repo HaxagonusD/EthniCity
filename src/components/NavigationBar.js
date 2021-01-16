@@ -12,6 +12,9 @@ export default class NavMenuHeader extends Component {
 
     return (
       <Menu stackable>
+        <Menu.Item>
+          <span className="logo">EthniCity</span>
+        </Menu.Item>
         <Menu.Item
           as={Link}
           to="/"

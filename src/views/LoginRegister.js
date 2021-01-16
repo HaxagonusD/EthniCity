@@ -4,7 +4,7 @@ function LoginRegister() {
     return (<div>
         {/* This is the Login Register page */}
         <Container fluid className="signup secondary-banner">
-            <div className="ui breadcrumb"><a className="section">Home</a><i aria-hidden="true" className="right angle icon divider"></i><a className="section">Login Register</a></div>
+            <div className="ui large breadcrumb"><a className="section">Home</a><i aria-hidden="true" className="right angle icon divider"></i><a className="section">Login Register</a></div>
             <h1>Login Register</h1>
         </Container>
 

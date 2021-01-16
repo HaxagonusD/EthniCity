@@ -57,7 +57,6 @@ code {
   grid-gap: 1em;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) ) ;
 }
-
 /* Semantic OverRide */
 .ui.stackable.menu {
   margin-bottom: 0;
@@ -87,13 +86,19 @@ code {
   font-size: 1.25em;
   padding-left: 5%;
 }
+.logo,
 .main-container .home-jumbotron h1 {
-  font-size: 3.25em;
   text-transform: capitalize;
   font-weight: 800;
   color: #2a9d8f;
 }
+.logo {
+  font-size: 1.5em;
+}
 
+.main-container .home-jumbotron h1 {
+  font-size: 3.25em;
+}
 .partners {
   background-color: rgba(78, 93, 111, 0.7);
   text-align: center;
@@ -150,7 +155,7 @@ font-size: 2em;
   font-style: normal;
 }
 .secondary-banner {
-  background-color: transparent;
+  background-color: #264653;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
