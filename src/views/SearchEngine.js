@@ -1,5 +1,5 @@
 function SearchEngine() {
-  return <div>This is the SearchEngine page</div>;
+  return <div></div>;
 }
 
 export default SearchEngine;
