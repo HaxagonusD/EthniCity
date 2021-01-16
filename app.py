@@ -21,14 +21,13 @@ def test():
     print((summary), "hello")
     return "Connected to the data base!"
 
-@app.route("/sendinginfo", methods=['GET'])
+@app.route("/users", methods=['GET'])
 def sendingreqtdata():
     star = mongo.db.stars
     output = []
     for s in star.find():
         output.append({'resume' : s['resume'], 'summary' : s['summary']})
     return jsonify({'result' : output})
-
 
 if __name__ == '__main__':
     app.run(port=5000)
