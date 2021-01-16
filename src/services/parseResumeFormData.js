@@ -17,7 +17,7 @@ const parseResumeFormData = (resumeData) => {
     if (!is_numeric(location)) {
       continue;
     }
-    const rest = key.slice(1);
+    let rest = key.slice(1);
 
     const type =
       rest.match("work") ||
@@ -25,7 +25,7 @@ const parseResumeFormData = (resumeData) => {
       rest.match("project") ||
       rest.match("education");
 
-    rest.replace(type[0], "");
+    rest = rest.replace(type[0], "");
     console.log(parsedData[type[0]][location]);
 
     if (parsedData[type[0]][location]) {

@@ -1,5 +1,5 @@
 import { Item } from "semantic-ui-react";
-function ResumeSummary({ summary }) {
+function ResumeSummary() {
   return (
     <Item.Group>
       <Item>

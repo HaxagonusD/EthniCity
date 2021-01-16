@@ -6,14 +6,19 @@ function SearchEngine({ users, setUsers }) {
     (async () => {
       const data = await getUsers();
 
+      for (let i = 0; i < data.length; i++) {
+        data[i].resume = JSON.parse(data[i].resume);
+      }
+
+      console.log(data);
       setUsers(data);
     })();
   }, []);
 
   return (
     <div>
-      {users.map((current) => {
-        return <ResumeSummary {...current} />;
+      {users.map((current, index) => {
+        return <ResumeSummary key={index} {...current} />;
       })}
     </div>
   );

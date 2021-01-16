@@ -4,6 +4,12 @@ import requests
 import json
 import openai
 import asyncio
+from flask_pymongo import PyMongo
+from flask import jsonify
+import db
+
+
+
 
 app = Flask(__name__)
 
@@ -21,12 +27,15 @@ def test():
     print((summary), "hello")
     return "Connected to the data base!"
 
-@app.route("/sendinginfo", methods=['GET'])
+@app.route("/users", methods=['GET'])
 def sendingreqtdata():
-    star = mongo.db.stars
+    everything = db.userCollection.find()
+    print(everything)
+    
     output = []
-    for s in star.find():
+    for s in  everything:
         output.append({'resume' : s['resume'], 'summary' : s['summary']})
+
     return jsonify({'result' : output})
 
 
