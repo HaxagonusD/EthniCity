@@ -19,14 +19,11 @@ function App() {
   const [resumeFormVolunteer, setResumeFormVolunteer] = useState([]);
   const [resumeFormProject, setResumeFormProject] = useState([]);
   const [resumeFormEducation, setResumeFormEducation] = useState([]);
-  const [users, setUsers] = useState([{}]);
+  const [users, setUsers] = useState([]);
 
   return (
     <Router>
-
-
       <Container fluid>
-
         <NavigationBar />
         <Switch>
           <Route exact path="/">
