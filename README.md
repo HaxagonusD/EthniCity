@@ -1,4 +1,4 @@
-# ValTech-Social-Impact
+# Ethnicity - 2nd Place winners of Valtech social Impact
 Only work off of the dev branch 
 
 - …or create a new repository on the command line
