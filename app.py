@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from prompt import returning_main
 import requests
 import json
@@ -7,9 +7,6 @@ import asyncio
 from flask_pymongo import PyMongo
 from flask import jsonify
 import db
-
-
-
 
 app = Flask(__name__,static_folder='./build', static_url_path='/')
 
@@ -37,6 +34,25 @@ def sendingreqtdata():
         output.append({'resume' : s['resume'], 'summary' : s['summary']})
 
     return jsonify({'result' : output})
+
+@app.route("/api/v2/resume", methods=['POST'])
+def add_resume_data():
+    raw_resume_data = request.resume_data
+    # Parse resume data from the request
+    raw_resume_data = parse_resume_data()
+    # Open a connection to db
+    # Format data appropriately for db insertion
+    formatted_resume_data = format_data_for_insertion()
+    # Insert into db, include try-catch
+    try:
+        resp = insert_resume_data(formatted_resume_data)
+    except Exception as e:
+        resp = handle_insertion_error(e)
+    # Return success/error codes as appropriate + add information for front-end
+    #   to process
+    return jsonify(resp)
+
+
 
 if __name__ == '__main__':
     app.run(port=5000)
