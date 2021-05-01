@@ -6,6 +6,8 @@ from typing import Any, Dict, List
 from bs4 import BeautifulSoup
 from bs4.element import NavigableString
 
+import constants
+
 
 REQUEST_INBETWEEN_DELAY_TIME = 0.5  # seconds
 
@@ -51,13 +53,14 @@ def scrape_job(url) -> Dict[str, Any]:
     days_posted = _find_days_posted(soup)
 
     return {
-        "title": title,
-        "company": company,
-        "salary": salary,
-        "jobType": job_type,
-        "daysPosted": days_posted,
-        "jobDescription": text
+        constants.TITLE_COL: title,
+        constants.COMPANY_COL: company,
+        constants.SALARY_COL: salary,
+        constants.JOB_TYPE_COL: job_type,
+        constants.DAYS_POSTED_COL: days_posted,
+        constants.JOB_DESC_COL: text
     }
+
 
 def _find_value_by_name(soup, name, attr, failure_msg):
     title = None
