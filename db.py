@@ -1,17 +1,11 @@
 # from flask_pymongo import pymongo
 import pymongo
 import json
+import constants
 
-DATA_DIR = "data"
-DATABASE = "ethnicityDb"
-USER_COLLECTION = "userCollection"
-RESUME_COLLECTION = "resumeCollection"
-JOBS_COLLECTION = "jobsCollection"
-TEST_COLLECTION = "testCollection"
-CONNECTION_STRING = "mongodb+srv://team10:A6u8bn4g9sYxSvfX@team10cluster.vkuqz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 # CONNECTION_STRING = "mongodb+srv://Clariza_Mayo:Foreve6434!@cluster0.y9k04.mongodb.net/<ValtechSocialImpactHackathon>?retryWrites=true&w=majority"
 
-mongo_client = pymongo.MongoClient(CONNECTION_STRING, connect=True)
+mongo_client = pymongo.MongoClient(constants.CONNECTION_STRING, connect=True)
 
 
 def list_all_databases(client):
@@ -39,45 +33,53 @@ def check_if_collection_exists(client, db_name, collection_name):
 
 
 def insert_dummy_data_into_collection(dummy_data_filename, collection_handler):
-    dummy_data_fullpath = DATA_DIR + '/' + dummy_data_filename
+    dummy_data_fullpath = constants.DATA_DIR + '/' + dummy_data_filename
     with open(dummy_data_fullpath) as data_f:
         dummy_data = json.load(data_f)
     resp = collection_handler.insert_one(dummy_data[0])
     return resp.inserted_id
 
 
-_db = mongo_client[DATABASE]
-userCollection = _db[USER_COLLECTION]
-resumeCollection = _db[RESUME_COLLECTION]
-jobsCollection = _db[JOBS_COLLECTION]
-testCollection = _db[TEST_COLLECTION]
+def delete_all_documents_from_collection(collection_handler):
+    try:
+        resp = collection_handler.delete_many({})
+        print(f"Deleted all documents from {collection_handler}")
+    except Exception as e:
+        print("Failed to delete all documents from collection")
+
+
+
+_db = mongo_client[constants.DATABASE]
+userCollection = _db[constants.USER_COLLECTION]
+resumeCollection = _db[constants.RESUME_COLLECTION]
+jobsCollection = _db[constants.JOBS_COLLECTION]
+testCollection = _db[constants.TEST_COLLECTION]
 
 user_collection_exists = check_if_collection_exists(mongo_client,
-                                                    DATABASE,
-                                                    USER_COLLECTION)
+                                                    constants.DATABASE,
+                                                    constants.USER_COLLECTION)
 
 if not user_collection_exists:
     inserted_ids = insert_dummy_data_into_collection('dummy_test_data.json',
                                                      userCollection)
-    print(f"Ids of inserted documents into {USER_COLLECTION}: {inserted_ids}")
+    print(f"Ids of inserted documents into {constants.USER_COLLECTION}: {inserted_ids}")
 
 resume_collection_exists = check_if_collection_exists(mongo_client,
-                                                      DATABASE,
-                                                      RESUME_COLLECTION)
+                                                      constants.DATABASE,
+                                                      constants.RESUME_COLLECTION)
 if not resume_collection_exists:
     inserted_ids = insert_dummy_data_into_collection('dummy_test_data.json',
                                                      resumeCollection)
-    print(f"Ids of inserted documents into {RESUME_COLLECTION}: {inserted_ids}")
+    print(f"Ids of inserted documents into {constants.RESUME_COLLECTION}: {inserted_ids}")
 
-jobs_collection_exists = check_if_collection_exists(mongo_client,
-                                                    DATABASE,
-                                                    JOBS_COLLECTION)
+# delete_all_documents_from_collection(jobsCollection)
+# inserted_ids = insert_dummy_data_into_collection('dummy_jobs_data.json',
+#                                                  jobsCollection)
+# print(f"Ids of inserted documents into {constants.JOBS_COLLECTION}: {inserted_ids}")
 
-if not jobs_collection_exists:
-    inserted_ids = insert_dummy_data_into_collection('dummy_test_data.json',
-                                                     jobsCollection)
-    print(f"Ids of inserted documents into {JOBS_COLLECTION}: {inserted_ids}")
-
+# inserted_ids = insert_dummy_data_into_collection('dummy_jobs_data.json',
+#                                                  jobsCollection)
+# print(f"Ids of inserted documents into {constants.JOBS_COLLECTION}: {inserted_ids}")
 
 # Testing
 # list_all_databases(mongo_client)
