@@ -10,3 +10,12 @@ CONNECTION_STRING = "mongodb+srv://team10:A6u8bn4g9sYxSvfX@team10cluster.vkuqz.m
 JOBS_CSV_COLUMNS = ['company', 'daysPosted', 'jobDescription', 'jobType', 'salary', 'title']
 
 CHARTS_CSV_FILENAME = 'charts_data.csv'
+
+
+# jobsCollection column names
+COMPANY_COL = 'company'
+DAYS_POSTED_COL = 'daysPosted'
+JOB_DESC_COL = 'jobDescription'
+JOB_TYPE_COL = 'jobType'
+SALARY_COL = 'salary'
+TITLE_COL = 'title'

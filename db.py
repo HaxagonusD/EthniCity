@@ -48,7 +48,6 @@ def delete_all_documents_from_collection(collection_handler):
         print("Failed to delete all documents from collection")
 
 
-
 _db = mongo_client[constants.DATABASE]
 userCollection = _db[constants.USER_COLLECTION]
 resumeCollection = _db[constants.RESUME_COLLECTION]
@@ -84,3 +83,10 @@ if not resume_collection_exists:
 # Testing
 # list_all_databases(mongo_client)
 # list_all_collections(mongo_client, DATABASE)
+
+
+def insert_postings_into_job_collection(postings):
+    if check_if_collection_exists(mongo_client, constants.DATABASE, constants.JOBS_COLLECTION):
+        jobsCollection.insert_many(postings)
+    else:
+        raise Exception("Collection does not exist")
