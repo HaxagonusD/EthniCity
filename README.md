@@ -1,4 +1,4 @@
-# ValTech-Social-Impact
+# TKH x Bloomber & ValTech-Social-Impact
 Only work off of the dev branch 
 
 - …or create a new repository on the command line
