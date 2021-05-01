@@ -20,18 +20,28 @@ def index():
         return app.send_static_file('index.html')
 
 
+# @app.route("/test", methods=['POST'])
+# def test():
+#     resume_string = str(request.data, 'utf-8')
+#     print("Resume data: ", resume_string)
+#     output = openai.Completion.create(engine="davinci",
+#                                       prompt=resume_string,
+#                                       temperature=0.3,
+#                                       max_tokens=60,
+#                                       top_p=1.0,
+#                                       frequency_penalty=0.0,
+#                                       presence_penalty=0.0)
+#     print("Summary: ", output)
+#     return "Connected to the data base!"
+
 @app.route("/test", methods=['POST'])
 def test():
-    resume_string = str(request.data, 'utf-8')
-    print("Resume data: ", resume_string)
-    output = openai.Completion.create(engine="davinci",
-                                      prompt=resume_string,
-                                      temperature=0.3,
-                                      max_tokens=60,
-                                      top_p=1.0,
-                                      frequency_penalty=0.0,
-                                      presence_penalty=0.0)
-    print("Summary: ", output)
+    json_file = request.data
+    new_string = str(request.data, 'utf-8')
+    print(new_string)
+    summary = returning_main(new_string)
+    print(summary)
+    print((summary), "hello")
     return "Connected to the data base!"
 
 
