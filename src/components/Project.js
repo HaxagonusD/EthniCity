@@ -10,8 +10,10 @@ function Project({ index, register }) {
           placeholder="Project Name"
         ></input>
       </Form.Field>
+      <Form.Field>
+      <label>Highlights</label>
       <List bulleted>
-        <label>Highlights</label>
+        
         <List.Item>
           <input
             name={`${index}ahighlightproject`}
@@ -34,6 +36,7 @@ function Project({ index, register }) {
           ></input>
         </List.Item>
       </List>
+      </Form.Field>
     </>
   );
 }

@@ -4,7 +4,7 @@ import "react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css";
 function WorkExperience({ register, index }) {
   return (
     <>
-      WorkExperience
+      
       <Form.Field>
         <label>Company</label>
         <input
@@ -36,8 +36,9 @@ function WorkExperience({ register, index }) {
           placeholder="Industry"
         ></input>
       </Form.Field>
+      <Form.Field>
+      <label>Highlights</label>
       <List bulleted>
-        <label>Highlights</label>
         <List.Item>
           <input
             name={`${index}ahighlightwork`}
@@ -60,6 +61,7 @@ function WorkExperience({ register, index }) {
           ></input>
         </List.Item>
       </List>
+      </Form.Field>
     </>
   );
 }

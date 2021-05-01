@@ -24,6 +24,20 @@ export default class NavMenuHeader extends Component {
         />
         <Menu.Item
           as={Link}
+          to="/resumeFormNew"
+          name='Candidate - Get Started'
+          active={activeItem === 'resumeFormNew'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          as={Link}
+          to="/dashboard"
+          name='Candidate - Dashboard'
+          active={activeItem === 'dashboard'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          as={Link}
           to="about"
           name='about'
           active={activeItem === 'about'}

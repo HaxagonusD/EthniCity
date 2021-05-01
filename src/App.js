@@ -12,6 +12,9 @@ import About from "./views/About";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import LoginRegister from "./views/LoginRegister";
+import UploadResume from "./views/UploadResume";
+import ResumeFormNew from "./views/ResumeFormNew";
+import Dashboard from "./views/Dashboard";
 
 import { useState } from "react";
 
@@ -63,6 +66,15 @@ function App() {
           </Route>
           <Route path="/login-register">
             <LoginRegister />
+          </Route>
+          <Route path="/uploadResume">
+            <UploadResume />
+          </Route>
+          <Route path="/resumeFormNew">
+            <ResumeFormNew />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
         </Switch>
         <Footer />

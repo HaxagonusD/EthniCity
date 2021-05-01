@@ -2,7 +2,7 @@ import { Form, List } from "semantic-ui-react";
 function Volunteer({ index, register }) {
   return (
     <>
-      Volunteer
+      
       <Form>
         <Form.Field>
           <label>Organization</label>
@@ -21,8 +21,10 @@ function Volunteer({ index, register }) {
             placeholder="Cause"
           ></input>
         </Form.Field>
+        <Form.Field>
+        <label>Highlights</label>
         <List bulleted>
-          <label>Highlights</label>
+          
           <List.Item>
             <input
               name={`${index}ahighlightvolunteer`}
@@ -45,6 +47,7 @@ function Volunteer({ index, register }) {
             ></input>
           </List.Item>
         </List>
+        </Form.Field>
       </Form>
     </>
   );
