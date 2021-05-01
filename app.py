@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-# from prompt import returning_main
+from prompt import returning_main
 import requests
 import json
 import openai
@@ -20,7 +20,20 @@ def index():
         return app.send_static_file('index.html')
 
 
-"""
+# @app.route("/test", methods=['POST'])
+# def test():
+#     resume_string = str(request.data, 'utf-8')
+#     print("Resume data: ", resume_string)
+#     output = openai.Completion.create(engine="davinci",
+#                                       prompt=resume_string,
+#                                       temperature=0.3,
+#                                       max_tokens=60,
+#                                       top_p=1.0,
+#                                       frequency_penalty=0.0,
+#                                       presence_penalty=0.0)
+#     print("Summary: ", output)
+#     return "Connected to the data base!"
+
 @app.route("/test", methods=['POST'])
 def test():
     json_file = request.data
@@ -30,7 +43,6 @@ def test():
     print(summary)
     print((summary), "hello")
     return "Connected to the data base!"
-"""
 
 
 @app.route("/users", methods=['GET'])
@@ -49,7 +61,6 @@ def sendingreqtdata():
 def get_all_resume_data():
     try:
         resp = db.resumeCollection.find({})
-        print("Resp: ", resp)
         json_response = format_response_success_retrieval(resp)
     except Exception as e:
         print("Error when retrieving data from mongodb resume collection", str(e))
@@ -117,8 +128,12 @@ def format_data_for_csv_file(user_data):
     for row in user_data:
         line = ''
         for key in keys:
-            line += str(row[key]) + ','
-        formatted_data.append(line[:-1])
+            if key in row:
+                line += str(row[key]) + ','
+            else:
+                line += ','
+        line_wo_newline = line[:-1].replace("'\n'", '')
+        formatted_data.append(line_wo_newline + '\n')
     return formatted_data
 
 
