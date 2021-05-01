@@ -10,7 +10,7 @@ CONNECTION_STRING = "mongodb+srv://team10:A6u8bn4g9sYxSvfX@team10cluster.vkuqz.m
 JOBS_CSV_COLUMNS = ['company', 'daysPosted', 'jobDescription', 'jobType', 'salary', 'title']
 
 CHARTS_CSV_FILENAME = 'charts_data.csv'
-
+OPENAI_API_KEY = "sk-bXjmQd7lR1rwEJql1RLDaA52qAThW5yYeSj0UCCe"
 
 # jobsCollection column names
 COMPANY_COL = 'company'

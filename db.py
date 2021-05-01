@@ -3,8 +3,6 @@ import pymongo
 import json
 import constants
 
-# CONNECTION_STRING = "mongodb+srv://Clariza_Mayo:Foreve6434!@cluster0.y9k04.mongodb.net/<ValtechSocialImpactHackathon>?retryWrites=true&w=majority"
-
 mongo_client = pymongo.MongoClient(constants.CONNECTION_STRING, connect=True)
 
 
