@@ -88,4 +88,5 @@ if not resume_collection_exists:
 def insert_postings_into_job_collection(postings):
     if check_if_collection_exists(mongo_client, constants.DATABASE, constants.JOBS_COLLECTION):
         jobsCollection.insert_many(postings)
-
+    else:
+        raise Exception("Collection does not exist")
